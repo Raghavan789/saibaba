@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.top-text {
+    background-color: white;
+    color: #FE772B;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header {
+    background-color: #FE772B;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 600px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(254, 119, 43, 0.7);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(254, 119, 43, 1);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-indicator {
+    width: 30px;
+    height: 4px;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: #FE772B;
+}
+
+.sai-event-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.sai-event-display {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+.sai-calendar-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+.sai-event-title {
+    font-size: 24px;
+    color: #FE772B;
+    margin-bottom: 10px;
+}
+.sai-event-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.sai-calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+.sai-calendar th, .sai-calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.sai-calendar th {
+    background-color: #FE772B;
+    color: white;
+}
+.sai-calendar td {
+    cursor: pointer;
+}
+.sai-calendar td:hover {
+    background-color: #f0f0f0;
+}
+.sai-calendar .sai-event-date {
+    background-color: #FFF0E6;
+    font-weight: bold;
+    color: #FE772B;
+}
+.sai-calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.sai-calendar-nav button {
+    background-color: #FE772B;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+//footer 
+
+.ram-section {
+    background-color: #FE772B !important;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.ram-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ram-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+.ram-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+.ram-column p, .ram-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+.ram-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+.ram-column ul li {
+    margin-bottom: 5px;
+}
+.ram-social-links a {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.ram-copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media (max-width: 768px) {
+    .ram-column {
+        flex-basis: 100%;
+    }
+}
