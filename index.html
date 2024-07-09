@@ -4,14 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sai baba</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet"  href="style.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     </head>
     <body>
         <div class="top-text">OM SAI SRI SAI JAI JAI SAI</div>
         <header>
             <nav>
+                <h1>Sai Ram</h1>
+                <input type="checkbox" name="check" id="toggle">
+                <label for="toggle"><i class="fa-solid fa-bars fa-lg toggle" style="color: #ffffff;"></i></label>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -35,88 +39,201 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrizTeRBc1bR_BaJ6z2nUjoRrgPWmaCcwTBg&s" alt="Sai Baba 3">
                 </div>
             </div>
-            <button class="carousel-btn carousel-btn-prev">&lt;</button>
-            <button class="carousel-btn carousel-btn-next">&gt;</button>
-            <div class="carousel-dots"></div>
+            
+            
         </div>
-        <div class="sai-event-container">
-            <div class="sai-event-display">
-                <h2 class="sai-event-title">Select a date to view event</h2>
-                <p class="sai-event-description">Click on a date in the calendar to view the event details.</p>
-            </div>
-            <div class="sai-calendar-wrapper">
-                <div class="sai-calendar-nav">
-                    <button id="sai-prev-month">&lt; Previous</button>
-                    <h2 id="sai-current-month"></h2>
-                    <button id="sai-next-month">Next &gt;</button>
+
+<br><br>
+        <!-- calendar -->
+        <div class="container-ram">
+            <div class="calendar-ram">
+                <header class="header-ram">
+                    <button id="prev-month-ram">&lt;</button>
+                    <span id="current-month-ram">July 2024</span>
+                    <button id="next-month-ram">&gt;</button>
+                </header>
+                <div class="days-ram">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <!-- Add dates here dynamically using JavaScript -->
                 </div>
-                <table class="sai-calendar">
-                    <thead>
-                        <tr>
-                            <th>Sun</th>
-                            <th>Mon</th>
-                            <th>Tue</th>
-                            <th>Wed</th>
-                            <th>Thu</th>
-                            <th>Fri</th>
-                            <th>Sat</th>
-                        </tr>
-                    </thead>
-                    <tbody id="sai-calendar-body"></tbody>
-                </table>
+            </div>
+            <br><br>
+            <div class="event-display-ram">
+                <h2>Event on <span id="event-date-ram"></span></h2>
+                <p id="event-description-ram">Click on a date to see the event.</p>
             </div>
         </div>
+    
+    <br><br>
 
+    <!--youtube embedded video-->
+    
 
-        <!-- footer -->
+    <!--about-->
+    <section id="about">
+        <h2>About </h2>
+        <div class="about-content">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEc_nFoX60HEDvbUKAuUXFm1MLeH7gjDycpmiAQQEIjKAOWTht" alt="Portrait of Sai Baba" class="about-image">
+            <div class="about-text">
+                <p>Sai Baba of Shirdi, also known as Shirdi Sai Baba, was an Indian spiritual master who was regarded by his devotees as a saint, fakir, and satguru. He was revered by both his Hindu and Muslim devotees during, as well as after his lifetime.</p>
+                <p>Born in the late 19th century, Sai Baba's real name, birthplace, and date of birth are unknown. He spent most of his life in Shirdi, a town in Maharashtra, India.</p>
+                <p>Sai Baba's teachings combined elements of Hinduism and Islam. He gave no distinction based on religion or caste. His philosophy was based on love, forgiveness, helping others, charity, contentment, inner peace, and devotion to God and guru.</p>
+                <p>Even today, Sai Baba is revered by millions across the world. His teachings continue to inspire and guide people towards a life of spiritual awareness and social harmony.</p>
+            </div>
+        </div>
+    </section>
       
-        <div class="ram-section">
-            <div class="ram-content">
-                <div class="ram-column">
-                    <h3>About Us</h3>
-                    <p>Dedicated to spreading the teachings and love of Sai Baba, we strive to create a community of devotees united in faith and service.</p>
-                </div>
-                <div class="ram-column">
-                    <h3>Library</h3>
-                    <ul>
-                        <li>Sai Satcharitra</li>
-                        <li>Bhajans and Artis</li>
-                        <li>Teachings of Sai Baba</li>
-                        <li>Photo Gallery</li>
-                    </ul>
-                </div>
-                <div class="ram-column">
-                    <h3>Social Activities</h3>
-                    <ul>
-                        <li>Food Distribution</li>
-                        <li>Medical Camps</li>
-                        <li>Education Support</li>
-                        <li>Community Service</li>
-                    </ul>
-                </div>
-                <div class="ram-column">
-                    <h3>Follow Us</h3>
-                    <div class="ram-social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <h3>Reach Us</h3>
-                    <p>Sai Baba Temple,<br>
-                       123 Devotee Street,<br>
-                       Shirdi, Maharashtra 423109,<br>
-                       India</p>
-                </div>
+    <br><br>
+
+    <!--Community-->
+
+    <section id="community">
+        <h2>Our Sai Community</h2>
+        <div class="community-content">
+            <div class="community-item">
+                <i class="fas fa-users"></i>
+                <h3>Devotee Groups</h3>
+                <p>Join local Sai Baba devotee groups for regular bhajans, satsangs, and community service activities.</p>
             </div>
-            <div class="ram-copyright">
-                <p>&copy; 2024 Sai Baba Website. Developed by Sai Baba devotee Raghavan.</p>
+            <div class="community-item">
+                <i class="fas fa-book-reader"></i>
+                <h3>Study Circles</h3>
+                <p>Participate in weekly study circles to delve deeper into Sai Baba's teachings and philosophy.</p>
+            </div>
+            <div class="community-item">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Seva Activities</h3>
+                <p>Engage in various seva (selfless service) activities inspired by Sai Baba's message of love and compassion.</p>
+            </div>
+            <div class="community-item">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Festivals & Celebrations</h3>
+                <p>Join us in celebrating Sai Baba's festivals and special occasions throughout the year.</p>
             </div>
         </div>
+        <div class="join-community">
+            <h3>Become Part of Our Sai Family</h3>
+            <p>Connect with fellow devotees and experience the joy of Sai Baba's teachings in community.</p>
+            <a href="#contact-us" class="btn">Join Now</a>
+        </div>
+    </section>
+
+    <br><br>
+
+    <!--library-->
+    <section id="library">
+        <h2>Sai Baba Library</h2>
+        <div class="library-content">
+            <div class="library-item">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/m/h/9/shri-sai-satcharitra-original-imagn7mfwzehvyy8.jpeg?q=90&crop=false" alt="Sai Satcharitra">
+                <h3>Sai Satcharitra</h3>
+                <p>The life and teachings of Sai Baba, as narrated by his devotee Hemadpant.</p>
+                <a href="#" class="read-more">Buy Now</a>
+            </div>
+            <div class="library-item">
+                <img src="https://m.media-amazon.com/images/I/41fbqxjgNpL.jpg" alt="Teachings of Sai Baba">
+                <h3>Teachings of Sai Baba</h3>
+                <p>A comprehensive collection of Sai Baba's spiritual teachings and philosophy.</p>
+                <a href="#" class="read-more">Buy Now</a>
+            </div>
+            <div class="library-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0e2AaThGJU2Mv1ZU9M_Vx2Hq-_3JMP6kmhg&s" alt="Sai Baba's Sermons">
+                <h3>Sai Baba's Sermons</h3>
+                <p>Transcripts of Sai Baba's sermons and discourses delivered in Shirdi.</p>
+                <a href="#" class="read-more">Buy Now</a>
+            </div>
+            <div class="library-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzhBo2GgfUF6Iuek_GJCMKNRUWckTx7ycKrw&s" alt="Sai Baba: The Saint of Shirdi">
+                <h3>Sai Baba: The Saint of Shirdi</h3>
+                <p>A biographical account of Sai Baba's life and his impact on devotees.</p>
+                <a href="#" class="read-more">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <div class="vid">
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/xBPmW6dW6eo?si=arVMDlZ8Qwaq3mgX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        </div>
+    <!--Social activities-->
+    <section id="social-activities">
+        <h2>Our Social Activities</h2>
+        <div class="activities-container">
+            <div class="activity-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshYAMFBjJW9QRtjbUYgx-htuuztz8sz0q3w&s" alt="Food Distribution">
+                <h3>Food Distribution</h3>
+                <p>Regular distribution of food to the needy, following Sai Baba's principle of feeding the hungry.</p>
+                <a href="#" class="activity-link">Learn More</a>
+            </div>
+            <div class="activity-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9JtBp9KoMHE01iw8rCSW_DoF-8E9vVMsjCA&s" alt="Medical Camps">
+                <h3>Medical Camps</h3>
+                <p>Organizing free medical camps to provide healthcare services to underprivileged communities.</p>
+                <a href="#" class="activity-link">Learn More</a>
+            </div>
+            <div class="activity-item">
+                <img src="https://i.pinimg.com/736x/ac/d3/d8/acd3d856b2f877bc01044ce7272d4110.jpg" alt="Education Support">
+                <h3>Education Support</h3>
+                <p>Providing educational materials and support to underprivileged children to empower them through knowledge.</p>
+                <a href="#" class="activity-link">Learn More</a>
+            </div>
+            <div class="activity-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZghk9_gL6WNYraXtssbxQLmCaDuXgcm66Q&s" alt="Environmental Care">
+                <h3>Environmental Care</h3>
+                <p>Initiatives for planting trees and cleaning public spaces to preserve nature and our surroundings.</p>
+                <a href="#" class="activity-link">Learn More</a>
+            </div>
+        </div>
+        <div class="get-involved">
+            <h3>Get Involved</h3>
+            <p>Join us in our mission to serve society and spread Sai Baba's message of love and compassion.</p>
+            <a href="#" class="btn">Volunteer Now</a>
+        </div>
+    </section>
+<br><br>
 
 
-        <script  src="script.js"  >
-        
-        </script>
+
+<!--footer-->
+<section class="box1">
+    <div class="box2">
+        <div class="box3">
+            <div class="box4">
+                <h3>Our Activities</h3>
+                <ul>
+                    <li>Food Distribution</li>
+                    <li>Medical Camps</li>
+                    <li>Education Support</li>
+                    <li>Community Service</li>
+                </ul>
+            </div>
+            <div class="box4">
+                <h3>Temple Address</h3>
+                <p>Sri Sai Baba Temple<br>
+                   123 Devotee Street<br>
+                   Shirdi, Maharashtra 423109<br>
+                   India</p>
+            </div>
+            <div class="box4">
+                <h3>Connect With Us</h3>
+                <div class="box5">
+                    <a href="#" class="box6">FB</a>
+                    <a href="#" class="box6">IG</a>
+                    <a href="#" class="box6">TW</a>
+                </div>
+            </div>
+        </div>
+        <div class="box7">
+            <p  >&copy; 2024 Sai Baba Website. Developed by Sai Baba devotee  <a style="color: #ffffff;text-decoration: none;" href="https://www.linkedin.com/in/krishna-raghavan-69a068263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" >Raghavan</a>  .</p>
+        </div>
+    </div>
+</section>
+        <script  src="script.js"></script>
        
     </body>
     </html>

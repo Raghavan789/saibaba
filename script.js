@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         goToSlide(currentIndex - 1);
     });
 
-    // Auto slide
+    // Auto slidea
     let slideInterval = setInterval(() => {
         goToSlide(currentIndex + 1);
     }, 5000); // Change slide every 5 seconds
@@ -76,90 +76,62 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //3rd page<>
-    const saiEvents = {
-        "2024-07-01": { 
-            title: "Guru Purnima",
-            description: "Guru Purnima is a spiritual tradition in Hindu culture, dedicated to spiritual and academic teachers. This day is celebrated as a festival in honor of Sai Baba."
-        },
-        "2024-07-15": {
-            title: "Sai Satcharitra Parayana",
-            description: "A week-long reading of the Sai Satcharitra, a devotional text that narrates the life, teachings, and miracles of Sai Baba."
-        },
-        "2024-08-05": {
-            title: "Sai Baba Punyatithi",
-            description: "This day marks the death anniversary of Sai Baba. Devotees gather to offer prayers and remember the teachings of Sai Baba."
-        }
-    };
+const events = {
+    '2024-07-04': 'Sai baba Birthday Celebration',
+    '2024-07-14': 'Sai baba Arthi',
+    '2024-07-22': 'Sai baba parayanam'
+};
 
-    let saiCurrentDate = new Date();
+const daysContainerRam = document.querySelector('.calendar-ram .days-ram');
+const eventDateRam = document.getElementById('event-date-ram');
+const eventDescriptionRam = document.getElementById('event-description-ram');
+const currentMonthRam = document.getElementById('current-month-ram');
+const prevMonthBtn = document.getElementById('prev-month-ram');
+const nextMonthBtn = document.getElementById('next-month-ram');
 
-    function showSaiEvent(date) {
-        const eventDisplay = document.querySelector('.sai-event-display');
-        const formattedDate = date.toISOString().split('T')[0];
-        if (saiEvents[formattedDate]) {
-            eventDisplay.innerHTML = `
-                <h2 class="sai-event-title">${saiEvents[formattedDate].title}</h2>
-                <p class="sai-event-description">${saiEvents[formattedDate].description}</p>
-            `;
-        } else {
-            eventDisplay.innerHTML = `
-                <h2 class="sai-event-title">No Event</h2>
-                <p class="sai-event-description">There are no events scheduled for this date.</p>
-            `;
-        }
+let currentDate = new Date(2024, 6, 1); // July 2024
+
+function renderCalendar() {
+    daysContainerRam.innerHTML = `
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    `;
+
+    const firstDayIndex = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+    const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    currentMonthRam.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
+
+    for (let i = 0; i < firstDayIndex; i++) {
+        const emptyDiv = document.createElement('div');
+        daysContainerRam.appendChild(emptyDiv);
     }
 
-    function generateSaiCalendar(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        
-        document.getElementById('sai-current-month').textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
-
-        const firstDay = new Date(year, month, 1);
-        const lastDay = new Date(year, month + 1, 0);
-        
-        const calendarBody = document.getElementById('sai-calendar-body');
-        calendarBody.innerHTML = '';
-
-        let date_ = new Date(firstDay);
-        date_.setDate(date_.getDate() - date_.getDay());
-
-        while (date_ <= lastDay || date_.getDay() !== 0) {
-            const row = document.createElement('tr');
-            
-            for (let i = 0; i < 7; i++) {
-                const cell = document.createElement('td');
-                cell.textContent = date_.getDate();
-                
-                if (date_.getMonth() === month) {
-                    const formattedDate = date_.toISOString().split('T')[0];
-                    if (saiEvents[formattedDate]) {
-                        cell.classList.add('sai-event-date');
-                    }
-                    cell.addEventListener('click', () => showSaiEvent(new Date(date_)));
-                } else {
-                    cell.style.color = '#ccc';
-                }
-                
-                row.appendChild(cell);
-                date_.setDate(date_.getDate() + 1);
-            }
-            
-            calendarBody.appendChild(row);
-        }
-
-        // Show event for the first day of the month if it exists
-        showSaiEvent(firstDay);
+    for (let i = 1; i <= lastDay; i++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.textContent = i;
+        dayDiv.addEventListener('click', () => {
+            const selectedDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+            eventDateRam.textContent = selectedDate;
+            eventDescriptionRam.textContent = events[selectedDate] || 'No events';
+        });
+        daysContainerRam.appendChild(dayDiv);
     }
+}
 
-    document.getElementById('sai-prev-month').addEventListener('click', () => {
-        saiCurrentDate.setMonth(saiCurrentDate.getMonth() - 1);
-        generateSaiCalendar(saiCurrentDate);
-    });
+prevMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+});
 
-    document.getElementById('sai-next-month').addEventListener('click', () => {
-        saiCurrentDate.setMonth(saiCurrentDate.getMonth() + 1);
-        generateSaiCalendar(saiCurrentDate);
-    });
+nextMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+});
 
-    generateSaiCalendar(saiCurrentDate);
+renderCalendar();
